@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1362446300.svg)](https://doi.org/10.5281/zenodo.22671811)
 # SecureBlockNet
 
 ## A Deep Learning-Enhanced Cryptographic Framework for Intelligent Traffic Blocking in Secure Networks
