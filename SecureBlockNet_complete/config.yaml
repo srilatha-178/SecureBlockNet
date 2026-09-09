@@ -1,0 +1,44 @@
+seed: 42
+classes:
+  - Benign
+  - DoS
+  - DDoS
+  - Reconnaissance
+  - Spoofing
+  - Web_BruteForce
+  - Other_Malicious
+preprocessing:
+  correlation_threshold: 0.95
+  top_k_features: 40
+  sequence_length: 10
+  sequence_stride: 1
+  test_size: 0.15
+  validation_size: 0.15
+model:
+  cnn_filters: [64, 128]
+  kernel_size: 3
+  bilstm_units: 128
+  dense_units: [128, 64]
+  dropout: 0.5
+  learning_rate: 0.001
+  batch_size: 64
+  epochs: 100
+  early_stopping_patience: 10
+risk:
+  confidence_weight: 0.45
+  severity_weight: 0.35
+  history_weight: 0.20
+  severity_abnormality_weight: 0.40
+  severity_impact_weight: 0.35
+  severity_persistence_weight: 0.25
+  low_medium_threshold: 0.35
+  medium_high_threshold: 0.70
+  block_confidence_threshold: 0.85
+  history_decay: 0.80
+  history_window: 20
+crypto:
+  aad_prefix: SecureBlockNet
+  quarantine_dir: quarantine
+training:
+  seeds: [42, 52, 62, 72, 82]
+  verbose: 1
